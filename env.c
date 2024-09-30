@@ -24,6 +24,7 @@ char* get_env(char* key) {
         {"DATABASE_URL", "mysql://user:password@localhost/dbname"},
         {"SECRET_KEY", "mysecretkey"},
         {"API_KEY", "1234567890abcdef"},
+        {"ENCRYPTION_KEY", "your-encryption-key-file-test"},
     };
 
     int size = sizeof(env_vars) / sizeof(env_vars[0]);
