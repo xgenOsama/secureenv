@@ -26,30 +26,7 @@
                         <label for="file">Select File to Encrypt</label>
                         <input type="file" name="file" id="file" class="form-control" required>
                     </div>
-                    <div class="form-group">
-                        <label for="key">Encryption Key (32 characters minimum)</label>
-                        <input type="text" name="key" id="key" class="form-control" required minlength="32">
-                    </div>
                     <button type="submit" class="btn btn-primary">Encrypt File</button>
-                </form>
-            </div>
-        </div>
-
-        {{-- File Decryption Form --}}
-        <div class="card mb-3">
-            <div class="card-body">
-                <h4>Decrypt File</h4>
-                <form action="{{ route('file.decrypt') }}" method="POST" enctype="multipart/form-data">
-                    @csrf
-                    <div class="form-group">
-                        <label for="file">Select File to Decrypt</label>
-                        <input type="file" name="file" id="file" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="key">Decryption Key</label>
-                        <input type="text" name="key" id="key" class="form-control" required minlength="32">
-                    </div>
-                    <button type="submit" class="btn btn-primary">Decrypt File</button>
                 </form>
             </div>
         </div>

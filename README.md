@@ -4,6 +4,15 @@ ffi.enable=1
 # in your php.ini file and restart php and nginx
 # set your env vars into env.c file then compile the file with gcc
 gcc -shared -o ./app/Services/env.so -fPIC env.c
+brew install openssl
+export LDFLAGS="-L/usr/local/opt/openssl/lib"
+export CPPFLAGS="-I/usr/local/opt/openssl/include"
+export LDFLAGS="-L/opt/homebrew/lib"
+export CPPFLAGS="-I/opt/homebrew/include"
+gcc -o ./app/Services/file_encryptor file_encryptor.c -lssl -lcrypto
+gcc -o ./app/Services/file_encryptor file_encryptor.c -I/opt/homebrew/include -L/opt/homebrew/lib -lssl -lcrypto
+
+
 
 
 # you can also but in /usr/local/bin/
